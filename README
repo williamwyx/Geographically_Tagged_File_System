@@ -1,0 +1,73 @@
+Test programs in hmwk6-prog/:
+a) make_fs
+   Used to make a new file system.
+
+b) ln-loop
+   Used to de the sym link.
+
+c) run_test
+   This shell script will:
+   1) make a new file system.
+   2) do the sym link.
+   3) mount the file system to the device.
+   4) push and run the deamon program gpsd.
+   5) push file_loc.
+   6) create a file: test_file and a directory: test_dir in our file system
+      and run file_loc on them to output GPS info.
+
+d) touch_test
+   This shell script will test on modifications to see if GPS info is updated.
+   test_file:
+   1) modify the file
+   2) chmod on the file
+   3) mv the file
+   test_dir:
+   1) chmod on the directory
+   2) create a file in the directory
+   3) mv the directory
+
+Output:
+test_file:
+GPS coordinate:
+40.809640, -73.960014
+Accuracy:
+30.000000m
+Coordinate age:
+1
+Google map URL:
+https://www.google.com/maps/@40.809640,-73.960014
+
+foo:
+GPS coordinate:
+40.809646, -73.960028
+Accuracy:
+30.000000m
+Coordinate age:
+0
+Google map URL:
+https://www.google.com/maps/@40.809646,-73.960028
+
+bar:
+GPS coordinate:
+40.809647, -73.960034
+Accuracy:
+30.000000m
+Coordinate age:
+0
+Google map URL:
+https://www.google.com/maps/@40.809647,-73.960034
+
+test_dir:
+GPS coordinate:
+40.809640, -73.960014
+Accuracy:
+30.000000m
+Coordinate age:
+1
+Google map URL:
+https://www.google.com/maps/@40.809640,-73.960014
+
+References:
+
+[1]: http://lwn.net/images/pdf/LDD3/ch11.pdf
+[2]: http://infocenter.arm.com/help/topic/com.arm.doc.ihi0043d/IHI0043D_rtabi.pdf
